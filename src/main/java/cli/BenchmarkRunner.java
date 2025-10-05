@@ -15,11 +15,11 @@ public class BenchmarkRunner {
 
         System.out.println("===== Heap Sort Performance Benchmark =====");
 
-        // Пользователь вводит размер массива
+
         System.out.print("Enter array size: ");
         int size = scanner.nextInt();
 
-        // Пользователь выбирает тип массива
+
         System.out.println("Choose array type:");
         System.out.println("1. Random");
         System.out.println("2. Sorted (ascending)");
@@ -30,14 +30,13 @@ public class BenchmarkRunner {
         int[] arr = new int[size];
 
         switch (choice) {
-            case 1 -> { // Случайный массив
+            case 1 -> {
                 for (int i = 0; i < size; i++) arr[i] = random.nextInt(10000);
             }
-            case 2 -> { // Отсортированный массив
+            case 2 -> {
                 for (int i = 0; i < size; i++) arr[i] = i;
             }
-            case 3 -> { // Обратно отсортированный массив
-                for (int i = 0; i < size; i++) arr[i] = size - i;
+            case 3 -> {
             }
             default -> {
                 System.out.println("Invalid choice! Using random array.");
@@ -48,7 +47,7 @@ public class BenchmarkRunner {
         System.out.println("\nArray before sorting:");
         System.out.println(Arrays.toString(Arrays.copyOf(arr, Math.min(20, arr.length))) + " ...");
 
-        // Запускаем сортировку
+
         PerformanceTracker tracker = new PerformanceTracker();
         HeapSort heapSort = new HeapSort(tracker);
 

@@ -28,7 +28,7 @@ public class HeapSortTest {
         }
     }
 
-    // Helper: generate random array of given size
+
     private static int[] generateRandomArray(int n) {
         Random rand = new Random();
         int[] arr = new int[n];

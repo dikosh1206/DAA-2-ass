@@ -13,7 +13,7 @@ public class HeapSort {
     public void sort(int[] arr) {
         int n = arr.length;
 
-        // Построение max-heap
+
         for (int i = n / 2 - 1; i >= 0; i--) {
             heapify(arr, n, i);
         }
@@ -34,7 +34,7 @@ public class HeapSort {
         int l = 2 * i + 1;
         int r = 2 * i + 2;
 
-        // Проверяем левый потомок
+
         if (l < n) {
             tracker.incrementComparisons();
             if (arr[l] > arr[largest]) {
@@ -42,7 +42,7 @@ public class HeapSort {
             }
         }
 
-        // Проверяем правый потомок
+
         if (r < n) {
             tracker.incrementComparisons();
             if (arr[r] > arr[largest]) {
@@ -50,7 +50,7 @@ public class HeapSort {
             }
         }
 
-        // Если нужно — меняем местами и продолжаем
+
         if (largest != i) {
             tracker.incrementSwaps();
             int swap = arr[i];
